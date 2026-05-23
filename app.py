@@ -272,20 +272,60 @@ def analyze_prompt_heuristic(prompt_text):
     return final_score, feedback
 
 # ------------------------------------------------------------
-# AI evaluator (optional)
+# NEW: Deep Dive & Perfect Prompt Generator (returns structured output)
 # ------------------------------------------------------------
-def ai_evaluate_prompt(prompt_text):
-    meta_prompt = f"""You are an expert prompt engineer. Analyze the following prompt for clarity, specificity, and potential issues.
-Provide a rating out of 10 and a brief justification.
+def deep_dive_perfect_prompt(original_prompt):
+    """
+    Asks the AI to analyze the original prompt and then generate a new one
+    that would score 10/10 on all quality metrics.
+    Returns the full AI response text.
+    """
+    meta_prompt = f"""You are an expert prompt engineer. 
 
-Prompt:
-\"\"\"
-{prompt_text}
-\"\"\"
+Analyze the following prompt. Identify its weaknesses and missing best practices (like role assignment, step-by-step instructions, examples, anti-hallucination clauses, or clarity).
 
-Analysis:"""
-    output, _, _ = groq_chat(meta_prompt, temperature=0.1, max_tokens=200)
-    return output
+Then, write a NEW, OPTIMIZED prompt that fixes all those issues and would definitely score a perfect 10/10 on a strict prompt quality rubric. The new prompt must include:
+- A clear role (e.g., "You are a ...")
+- Step-by-step instructions or a logical structure
+- At least one example or illustration
+- An anti-hallucination clause (e.g., "If you are unsure, say so" or "Do not make up facts")
+
+Format your response EXACTLY like this:
+
+## Analysis
+[Your analysis of the original prompt, bullet points]
+
+## Optimized Prompt
+[The new, perfect prompt inside a code block]
+
+Original prompt:
+\"\"\"
+{original_prompt}
+\"\"\"
+"""
+    response, _, _ = groq_chat(meta_prompt, model="llama-3.1-8b-instant", temperature=0.4, max_tokens=600)
+    return response
+
+# ------------------------------------------------------------
+# Helper: Extract the optimized prompt from the AI response
+# ------------------------------------------------------------
+def extract_optimized_prompt(full_response):
+    """
+    Extract the perfect prompt from the AI's structured response.
+    Looks for a markdown code block after '## Optimized Prompt'.
+    """
+    match = re.search(r"## Optimized Prompt\s*```(.*?)```", full_response, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    # Fallback: try to find any code block
+    match = re.search(r"```(.*?)```", full_response, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    # Last resort: return everything after the heading
+    parts = full_response.split("## Optimized Prompt")
+    if len(parts) > 1:
+        return parts[1].strip()
+    return ""
 
 # ------------------------------------------------------------
 # TOP HUD (HTML)
@@ -392,19 +432,32 @@ if "selected_prompt" in st.session_state and st.session_state.get("run_trigger",
                     st.code(output, language="text")
                     st.caption(f"⏱️ {latency:.2f}s | 🧠 {tokens} tokens")
                     
-                    # Heuristic analysis
+                    # Heuristic analysis of the original prompt
                     score, fb = analyze_prompt_heuristic(final_prompt)
-                    st.markdown("### 🛡️ PROMPT QUALITY SCORE")
+                    st.markdown("### 🛡️ PROMPT QUALITY SCORE (Original)")
                     st.metric("Score", f"{score}/10")
                     for f in fb:
                         st.write(f)
                     
-                    # AI deep eval
-                    if st.button("🔬 DEEP AI EVALUATION", key="deep_eval"):
-                        with st.spinner("Analyzing prompt architecture..."):
-                            ai_fb = ai_evaluate_prompt(final_prompt)
-                            st.markdown("### 🤖 AI FEEDBACK")
-                            st.write(ai_fb)
+                    # ----- PERFECT PROMPT GENERATOR (with auto-analysis) -----
+                    if st.button("🧬 GENERATE PERFECT PROMPT", key="perfect_btn"):
+                        with st.spinner("🔍 Deep‑diving into prompt architecture..."):
+                            perfect_response = deep_dive_perfect_prompt(final_prompt)
+                            st.markdown("### 🤖 AI DEEP DIVE & PERFECT PROMPT")
+                            st.markdown(perfect_response)
+                            
+                            # Extract the optimized prompt and analyze it
+                            optimized_prompt = extract_optimized_prompt(perfect_response)
+                            if optimized_prompt:
+                                st.markdown("---")
+                                st.markdown("### 🎯 PERFECT PROMPT ANALYSIS")
+                                st.code(optimized_prompt, language="text")
+                                perfect_score, perfect_fb = analyze_prompt_heuristic(optimized_prompt)
+                                st.metric("Perfect Prompt Score", f"{perfect_score}/10")
+                                for f in perfect_fb:
+                                    st.write(f)
+                            else:
+                                st.warning("Could not extract the optimized prompt for analysis. Please check the AI response above.")
     
     if st.button("❌ CLOSE OUTPUT BAY"):
         st.session_state.run_trigger = False
