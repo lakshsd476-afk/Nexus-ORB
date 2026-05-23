@@ -36,7 +36,7 @@
 
 ## 🚀 Live Demo
 
-Experience the Prompt Nexus: [**Click Here to Launch**](https://your-app-link.streamlit.app)
+Experience the Prompt Nexus: [**Click Here to Launch**](https://nexus-orb.streamlit.app)
 
 *(Note: if the live link is down, you can run it locally using the instructions below.)*
 
