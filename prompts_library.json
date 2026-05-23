@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "title": "Explain Like I'm 5",
+    "category": "Education & Learning",
+    "genre": "Casual",
+    "prompt_template": "Explain {concept} like I'm 5 years old. Use simple analogies and avoid jargon.",
+    "description": "Makes complex topics accessible for any audience.",
+    "variables": ["concept"]
+  },
+  {
+    "id": 2,
+    "title": "Code Refactor",
+    "category": "Coding & Technical",
+    "genre": "Professional",
+    "prompt_template": "Refactor the following {language} code to improve readability and efficiency. Provide the updated code and explain the changes.\n\n```\n{code}\n```",
+    "description": "Asks the AI to clean up and optimize code.",
+    "variables": ["language", "code"]
+  },
+  {
+    "id": 3,
+    "title": "Fantasy World Builder",
+    "category": "Creative Writing",
+    "genre": "Fantasy",
+    "prompt_template": "Create a detailed description of a fantasy world called {world_name}. Include geography, magic system, political factions, and a unique creation myth.",
+    "description": "Generates rich lore for worldbuilding.",
+    "variables": ["world_name"]
+  },
+  {
+    "id": 4,
+    "title": "Meeting Summarizer",
+    "category": "Business & Productivity",
+    "genre": "Professional",
+    "prompt_template": "Summarize the following meeting transcript into key decisions, action items (with owners and deadlines), and a brief executive summary.\n\nTranscript:\n{transcript}",
+    "description": "Turns meeting transcripts into structured summaries.",
+    "variables": ["transcript"]
+  },
+  {
+    "id": 5,
+    "title": "Debugging Partner",
+    "category": "Coding & Technical",
+    "genre": "Technical",
+    "prompt_template": "I'm getting this error in my {language} code:\n```\n{error_message}\n```\nHere's the relevant snippet:\n```\n{code}\n```\nExplain what's causing the error and suggest a fix.",
+    "description": "Helps diagnose programming errors.",
+    "variables": ["language", "error_message", "code"]
+  },
+  {
+    "id": 6,
+    "title": "Poetry Generator",
+    "category": "Creative Writing",
+    "genre": "Romantic",
+    "prompt_template": "Write a {style} poem about {topic}. The poem should be 12 lines long and use vivid imagery.",
+    "description": "Creates custom poetry in a chosen style.",
+    "variables": ["style", "topic"]
+  },
+  {
+    "id": 7,
+    "title": "SQL Query Writer",
+    "category": "Data Analysis",
+    "genre": "Technical",
+    "prompt_template": "Write a SQL query to {task}. The database has tables: {tables}. Return only the query without explanation.",
+    "description": "Generates SQL queries from plain English.",
+    "variables": ["task", "tables"]
+  },
+  {
+    "id": 8,
+    "title": "Job Interview Coach",
+    "category": "Role-Playing & Simulation",
+    "genre": "Professional",
+    "prompt_template": "Simulate a job interview for a {position} role. Ask me 10 common questions, and after each answer, give feedback on my response.",
+    "description": "Interactive interview practice with AI feedback.",
+    "variables": ["position"]
+  },
+  {
+    "id": 9,
+    "title": "News Summarizer",
+    "category": "Content Creation",
+    "genre": "Neutral",
+    "prompt_template": "Summarize the following news article in 3 bullet points, keeping a neutral tone.\n\nArticle:\n{article}",
+    "description": "Extracts key facts from news articles.",
+    "variables": ["article"]
+  },
+  {
+    "id": 10,
+    "title": "Cold Email Generator",
+    "category": "Business & Productivity",
+    "genre": "Persuasive",
+    "prompt_template": "Write a cold email to a potential client in the {industry} industry. Our service is {service}. Keep it under 200 words, friendly, and with a clear call to action.",
+    "description": "Creates effective outreach emails.",
+    "variables": ["industry", "service"]
+  },
+  {
+    "id": 11,
+    "title": "DSA Concept Explainer",
+    "category": "Coding & Technical",
+    "genre": "Educational",
+    "prompt_template": "Explain the data structure/algorithm {concept} in simple terms. Include: how it works, time complexity, common use cases, and a short pseudocode example.",
+    "description": "Perfect for last‑minute DSA revision before interviews.",
+    "variables": ["concept"]
+  },
+  {
+    "id": 12,
+    "title": "Code Optimizer",
+    "category": "Coding & Technical",
+    "genre": "Technical",
+    "prompt_template": "Analyze the following {language} code for performance bottlenecks. Suggest 3 optimizations with code snippets and explain the trade-offs.\n\n```\n{code}\n```",
+    "description": "Helps you write efficient code for competitive programming & projects.",
+    "variables": ["language", "code"]
+  },
+  {
+    "id": 13,
+    "title": "LeetCode Problem Solver",
+    "category": "Coding & Technical",
+    "genre": "Competitive",
+    "prompt_template": "Solve this LeetCode problem: {problem_statement}. Provide the approach, time/space complexity, and a clean {language} solution with comments.",
+    "description": "Your personal CP assistant – breaks down any DSA problem.",
+    "variables": ["problem_statement", "language"]
+  },
+  {
+    "id": 14,
+    "title": "Capstone Project Idea Generator",
+    "category": "Projects & Research",
+    "genre": "Creative",
+    "prompt_template": "Suggest 5 innovative BTech capstone project ideas in {domain} (e.g., AI, IoT, blockchain). For each, include a problem statement, tech stack, and feasibility note.",
+    "description": "Overcome project idea block with tailored, implementable suggestions.",
+    "variables": ["domain"]
+  },
+  {
+    "id": 15,
+    "title": "Research Paper Summarizer",
+    "category": "Study & Academia",
+    "genre": "Academic",
+    "prompt_template": "Summarize this research paper abstract into 3 key points suitable for a BTech student. Use plain English and highlight the main contribution.\n\nAbstract:\n{abstract}",
+    "description": "Quickly digest papers for literature surveys or assignments.",
+    "variables": ["abstract"]
+  },
+  {
+    "id": 16,
+    "title": "Mathematics Problem Solver",
+    "category": "Core Engineering",
+    "genre": "Educational",
+    "prompt_template": "Solve this engineering math problem step‑by‑step: {problem}. Explain each step and the underlying concept. Topic: {topic} (e.g., linear algebra, calculus).",
+    "description": "Covers calculus, linear algebra, probability – essential for sem exams.",
+    "variables": ["problem", "topic"]
+  },
+  {
+    "id": 17,
+    "title": "Circuit Analysis Helper",
+    "category": "Core Engineering",
+    "genre": "Technical",
+    "prompt_template": "Analyze the given circuit: {circuit_description}. Find current/voltage using {method} (KVL/KCL, Thevenin, etc.). Show all steps and final values.",
+    "description": "Electrical/electronics students can debug circuits with AI guidance.",
+    "variables": ["circuit_description", "method"]
+  },
+  {
+    "id": 18,
+    "title": "Machine Learning Model Selector",
+    "category": "Data Analysis",
+    "genre": "Educational",
+    "prompt_template": "I have a dataset with {features} and need to predict {target}. Suggest 3 ML models (with pros/cons) and recommend the best one with Python code skeleton.",
+    "description": "Ideal for BTech AI/ML projects or hackathons.",
+    "variables": ["features", "target"]
+  },
+  {
+    "id": 19,
+    "title": "Exam Cram Notes Creator",
+    "category": "Study & Academia",
+    "genre": "Educational",
+    "prompt_template": "Create ultra‑condensed revision notes on {subject_topic} for a BTech exam. Use bullet points, important formulas, and mnemonics. Max 200 words.",
+    "description": "Turn weeks of lectures into a single‑page cheat sheet.",
+    "variables": ["subject_topic"]
+  },
+  {
+    "id": 20,
+    "title": "Group Discussion Simulator",
+    "category": "Role-Playing & Simulation",
+    "genre": "Professional",
+    "prompt_template": "Simulate a group discussion on the topic '{topic}' for a campus placement. I'll give my opening statement, then you act as other candidates and moderate. Provide feedback at the end.",
+    "description": "Practice GD rounds with an AI moderator and opponents.",
+    "variables": ["topic"]
+  },
+  {
+    "id": 21,
+    "title": "Resume Bullet Enhancer",
+    "category": "Business & Productivity",
+    "genre": "Professional",
+    "prompt_template": "Rewrite these resume bullet points using strong action verbs and quantifiable achievements (STAR method). Add impact metrics where possible.\n\nPoints:\n{bullets}",
+    "description": "Tailored for BTech students applying to internships/jobs.",
+    "variables": ["bullets"]
+  },
+  {
+    "id": 22,
+    "title": "Viva Question Predictor",
+    "category": "Study & Academia",
+    "genre": "Educational",
+    "prompt_template": "Generate 10 viva‑voce questions a professor might ask for a BTech project on '{project_title}'. Include answers and key concepts to revise.",
+    "description": "Walk into your final viva fully prepared.",
+    "variables": ["project_title"]
+  },
+  {
+    "id": 23,
+    "title": "Signals & Systems Solver",
+    "category": "Core Engineering",
+    "genre": "Technical",
+    "prompt_template": "Find the Fourier/Laplace/Z‑transform of {signal}. Show the step‑by‑step mathematical derivation and mention the ROC.",
+    "description": "Essential for ECE/EE students struggling with transforms.",
+    "variables": ["signal"]
+  },
+  {
+    "id": 24,
+    "title": "Internship Cold Email",
+    "category": "Business & Productivity",
+    "genre": "Persuasive",
+    "prompt_template": "Write a cold email to a {company_type} startup asking for a {domain} internship. Mention my skills: {skills}. Keep it under 150 words and humble.",
+    "description": "Land your dream internship with a polished, personalized pitch.",
+    "variables": ["company_type", "domain", "skills"]
+  },
+  {
+    "id": 25,
+    "title": "Algorithm Dry‑Run Visualizer",
+    "category": "Coding & Technical",
+    "genre": "Educational",
+    "prompt_template": "Dry‑run the algorithm {algorithm_name} on this input: {input_data}. Show each iteration, variable changes, and final output in a structured table.",
+    "description": "Understand how sorting/graph/tree algorithms execute step‑by‑step.",
+    "variables": ["algorithm_name", "input_data"]
+  },
+  {
+    "id": 26,
+    "title": "Time‑Table Optimizer",
+    "category": "Study & Academia",
+    "genre": "Practical",
+    "prompt_template": "Create a weekly study plan for a BTech student preparing for {exams/subjects}. Allocate 5 hours daily, include breaks, and prioritize tough topics.",
+    "description": "Beat procrastination with a realistic, AI‑crafted schedule.",
+    "variables": ["exams/subjects"]
+  },
+  {
+    "id": 27,
+    "title": "Bug Report Decoder",
+    "category": "Coding & Technical",
+    "genre": "Technical",
+    "prompt_template": "Explain this error message in simple terms: `{error_log}`. What caused it? Suggest 3 possible fixes and how to prevent it in the future.",
+    "description": "Decode cryptic compiler/runtime errors instantly.",
+    "variables": ["error_log"]
+  },
+  {
+    "id": 28,
+    "title": "Literature Survey Assistant",
+    "category": "Projects & Research",
+    "genre": "Academic",
+    "prompt_template": "For a BTech project on {topic}, list 5 recent papers (2022+) with a one‑line summary each. Also mention open research gaps.",
+    "description": "Quick start your literature review without drowning in Google Scholar.",
+    "variables": ["topic"]
+  },
+  {
+    "id": 29,
+    "title": "Seminar Script Writer",
+    "category": "Study & Academia",
+    "genre": "Educational",
+    "prompt_template": "Write a 5‑minute seminar script on {topic} for a BTech audience. Include an engaging opening, key points, and a memorable conclusion.",
+    "description": "Ace your next technical presentation with a ready‑made script.",
+    "variables": ["topic"]
+  },
+  {
+    "id": 30,
+    "title": "Placement Aptitude Trainer",
+    "category": "Exam & Interview Prep",
+    "genre": "Competitive",
+    "prompt_template": "Generate 5 aptitude questions on {topic} (e.g., probability, time‑speed, puzzles) with detailed solutions. Mimic the style of campus placement tests.",
+    "description": "Practice quant & reasoning for TCS, Infosys, etc.",
+    "variables": ["topic"]
+  },
+  {
+    "id": 31,
+    "title": "Design Pattern Explainer",
+    "category": "Coding & Technical",
+    "genre": "Educational",
+    "prompt_template": "Explain the {design_pattern} design pattern with a real‑world analogy, a UML diagram description, and a {language} code example.",
+    "description": "Master software design patterns for interviews & clean architecture.",
+    "variables": ["design_pattern", "language"]
+  },
+  {
+    "id": 32,
+    "title": "Thermodynamics Problem Solver",
+    "category": "Core Engineering",
+    "genre": "Technical",
+    "prompt_template": "Solve this thermodynamics problem: {problem}. Use {law/formula} and show all unit conversions. Explain the physical meaning of the result.",
+    "description": "Mechanical/chemical engineering students – get step‑wise solutions.",
+    "variables": ["problem", "law/formula"]
+  },
+  {
+    "id": 33,
+    "title": "Git Command Troubleshooter",
+    "category": "Coding & Technical",
+    "genre": "Technical",
+    "prompt_template": "I'm stuck with this Git issue: `{error_or_situation}`. Explain what went wrong and give the exact commands to fix it.",
+    "description": "Resolve merge conflicts, detached HEAD, and other Git nightmares.",
+    "variables": ["error_or_situation"]
+  },
+  {
+    "id": 34,
+    "title": "Mini‑Project Documentation Generator",
+    "category": "Projects & Research",
+    "genre": "Academic",
+    "prompt_template": "Generate a project report outline for a BTech mini‑project titled '{project_title}'. Include: abstract, system architecture, implementation details, results, and future scope.",
+    "description": "Save hours on documentation with a structured template.",
+    "variables": ["project_title"]
+  },
+  {
+    "id": 35,
+    "title": "Essay/Assignment Outline",
+    "category": "Study & Academia",
+    "genre": "Academic",
+    "prompt_template": "Create a detailed outline for a 1000‑word essay on '{topic}'. Include thesis statement, main arguments, supporting evidence, and a counter‑argument section.",
+    "description": "Perfect for humanities/social science assignments in engineering.",
+    "variables": ["topic"]
+  }
+]
