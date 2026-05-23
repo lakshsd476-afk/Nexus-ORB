@@ -6,7 +6,7 @@
 > **The ultimate AI prompt library for BTech & higher education students.**  
 > Browse, customize, execute, and analyze prompts — all inside a stylish, animated cosmic interface.
 
-![screenshot](https://via.placeholder.com/800x400.png?text=Prompt+Nexus+Screenshot)
+
 
 ---
 
